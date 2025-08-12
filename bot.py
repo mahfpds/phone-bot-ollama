@@ -62,7 +62,7 @@ async def run_bot(transport: BaseTransport):
         sample_rate=int(os.getenv("AUDIO_OUT_SAMPLE_RATE", "8000")),
     )
 
-    llm = OLLamaLLMService(model=os.getenv("OLLAMA_MODEL","gemma3-27b"), base_url=os.getenv("OLLAMA_BASE_URL","http://localhost:11434/v1"))
+    llm = OLLamaLLMService(model=os.getenv("OLLAMA_MODEL","gemma3:27b"), base_url=os.getenv("OLLAMA_BASE_URL","http://localhost:11434/v1"))
 
     # --- Function calling: tool schemas ---
     visiting_hours_fn = FunctionSchema(
